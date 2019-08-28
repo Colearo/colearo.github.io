@@ -49,4 +49,4 @@ Two states: root and non-root, like transitions from user to kernel operations w
 
 ![vmm](vmm.png)
 
-There are a variety of ways to perform a VM entry, and countless conditions that can result in a VM exit.
+There are a variety of ways to perform a VM entry, and countless conditions that can result in a VM exit. The conditions for VM exits are primarily controlled by a group of VM execution control structures.
