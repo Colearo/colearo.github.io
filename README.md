@@ -48,3 +48,5 @@ full-virtualization: It tries to trick the guest into believing it is running on
 Two states: root and non-root, like transitions from user to kernel operations when a VMM is not present, the transitions while in VMX operation are called VMX transitions. To enter non-root operation (or guest operation) the VMM performs a VM entry, and to exit non-root operation and enter root operation (or the VMM) a VM exit is performed.  
 
 ![vmm](vmm.png)
+
+There are a variety of ways to perform a VM entry, and countless conditions that can result in a VM exit.
