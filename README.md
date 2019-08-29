@@ -15,7 +15,10 @@
 ### OS basics
 - In the interrupt context which locks could be used?
 
-- What is the differences between the spinlock, spinlock_irq, spinlock_irq_save?
+- What is the differences between the spinlock, spinlock_irq, spinlock_irq_save, spinlock_irq_bh?
+
+spin_lock_irqsave disables interrupts (on the local processor only) before taking the spinlock; the previous interrupt state is stored in flags. If you are absolutely sure nothing else might have already disabled interrupts on your processor (or, in other words, you are sure that you should enable interrupts when you release your spinlock), you can use spin_lock_irq instead and not have to keep track of the flags. Finally, spin_lock_bh disables software interrupts before taking the lock, but leaves hardware interrupts enabled.
+
 
 - kmalloc vs vmalloc?
 
