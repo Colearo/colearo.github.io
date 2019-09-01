@@ -53,3 +53,13 @@ Two states: root and non-root, like transitions from user to kernel operations w
 ![vmm](vmm.png)
 
 There are a variety of ways to perform a VM entry, and countless conditions that can result in a VM exit. The conditions for VM exits are primarily controlled by a group of VM execution control structures.
+
+## VFIO
+### IOMMU
+IOMMU advantages :
+
+- Restrict the device access by user space so that device I/O addresses need to be remapped to physical addresses through IOMMU  
+- Remap the continuous virtual address spaces to incontineous physical addresses partitions, so vectored I/O (scatter-gather list) is supported.  
+- Through IOMMU remapping, these devices not able to address full address space could circumvent bounce buffer (copy data from the accessable address space to unaccessable space).
+
+[Ref](https://www.ibm.com/developerworks/community/blogs/5144904d-5d75-45ed-9d2b-cf1754ee936a/entry/20160605?lang=en)
