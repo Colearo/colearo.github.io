@@ -54,6 +54,12 @@ Two states: root and non-root, like transitions from user to kernel operations w
 
 There are a variety of ways to perform a VM entry, and countless conditions that can result in a VM exit. The conditions for VM exits are primarily controlled by a group of VM execution control structures.
 
+### MMU virtualization  
+
+If you’re familiar with paging, the 3rd control register (CR3) is the base address of PML4 Table (in an x64 processor or more generally it points to root paging directory), in EPT guest is not aware of EPT Translation so it has CR3 too but this CR3 is used to convert Guest Virtual Address to Guest Physical Address, whenever you find your target Guest Physical Address, it’s EPT mechanism that treats your Guest Physical Address like a virtual address and the EPTP is the CR3. 
+
+
+
 ## VFIO
 ### IOMMU
 IOMMU advantages :
